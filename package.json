@@ -17,7 +17,9 @@
     "redux-saga": "^1.0.2",
     "reselect": "^4.0.0",
     "semantic-ui-react": "^0.87.1",
-    "vanilla-tilt": "^1.7.0"
+    "vanilla-tilt": "^1.7.0",
+    "now-dev": "react-scripts start",
+    "now-build": "react-scripts build"
   },
   "scripts": {
     "start": "react-scripts start",
