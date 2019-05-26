@@ -3,6 +3,7 @@ import { Table, Rating, Header, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { rateHotel } from '../reducers';
 import { getHotelToRating } from '../selectors';
+import './style.css';
 
 const HotelRating = ({ hotel, rate }) => (
   <Table.Row>
@@ -15,7 +16,9 @@ const HotelRating = ({ hotel, rate }) => (
         />
         <Header.Content>
           {hotel.title}
-          <Header.Subheader>{hotel.location.address}</Header.Subheader>
+          <Header.Subheader>
+            <p className="address-width-limit">{hotel.location.address}</p>
+          </Header.Subheader>
         </Header.Content>
       </Header>
     </Table.Cell>

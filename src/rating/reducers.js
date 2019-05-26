@@ -19,12 +19,13 @@ const ratings = (state = initState, action) =>
         draft.inProgress = true;
         return draft;
       case 'RATING_SUCCESS':
+        const slice = state.order.length;
         const { result, entities } = normalize(
-          action.payload.list.slice(0, 10),
+          action.payload.list.slice(slice, slice + 10),
           ratingsSchema
         );
-        draft.order = result;
-        draft.entities = entities.ratings;
+        draft.order = [...new Set([...draft.order, ...result])];
+        draft.entities = { ...state.entities, ...entities.ratings };
         draft.error = null;
         draft.inProgress = false;
         return draft;
